@@ -13,6 +13,11 @@ const seedMe = async () => {
             name: "Dash",
             username: "DashDog",
             email: "Dash@joe.joe"
+        }, 
+        {
+            name: "Pepper",
+            username: "PepperCat",
+            email: "Pepper@joe.joe"
         }
 
     ], {
