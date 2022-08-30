@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS solit_db;
+CREATE DATABASE solit_db;
