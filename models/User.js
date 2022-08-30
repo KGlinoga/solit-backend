@@ -5,6 +5,12 @@ class User extends Model {}
 
 User.init({
     // add properites here, ex:
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
     name: {
          type: DataTypes.STRING,
          allowNull:false
@@ -15,11 +21,20 @@ User.init({
     },
     email: {
         type: DataTypes.STRING,
-        allowNull:false
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: true,
+        },
     }
-    // id: {
-    //     type:DataTypes.INTEGER
-        
+    // password: {
+    //     password: {
+    //         type: DataTypes.STRING,
+    //         allowNull: false,
+    //         validate: {
+    //             len: [8],
+    //         },
+    //     },
     // }
     // dailyDiary: {
     //     type: 
