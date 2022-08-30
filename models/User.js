@@ -1,9 +1,9 @@
 const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Users extends Model {}
+class User extends Model {}
 
-Users.init({
+User.init({
     // add properites here, ex:
     name: {
          type: DataTypes.STRING,
@@ -33,4 +33,4 @@ Users.init({
     sequelize
 });
 
-module.exports= Users
+module.exports= User
