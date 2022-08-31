@@ -10,7 +10,13 @@ UserShelf.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    // FK id from User here
+    user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'user',
+            key: 'id',
+        },
+    },
     shelf_name: {
         type: DataTypes.STRING,
         allowNull: false
@@ -22,9 +28,14 @@ UserShelf.init({
     have_read: {
         type: DataTypes.BOOLEAN,
         allowNull: true
-    }
+    },
+  
 }, {
-    sequelize
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'userShelf',
 });
 
 module.exports = UserShelf;

@@ -5,10 +5,11 @@ const userData = require('./userData.json');
 const userShelfData = require('./userShelfData.json');
 
 const seedMe = async () => {
-    User.bulkCreate(userData, {
+    await sequelize.sync({ force: true });
+    await User.bulkCreate(userData, {
         individualHooks: true
     });
-    await sequelize.sync({ force: true });
+    // await sequelize.sync({ force: true });
     await UserShelf.bulkCreate(userShelfData, {
         individualHooks: true
     });

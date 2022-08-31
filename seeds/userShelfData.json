@@ -1,19 +1,25 @@
 [
     {
+        "user_id": 1,
         "shelf_name": "Coding Theory",
         "shelf_desc": "Make bootcamp make sense",
         "have_read": false
-    },
+    }, {
+        "user_id" : 3,
+        "shelf_name": "Cook books",
+        "shelf_desc": "eating my feelings",
+        "have_read": true
+    }, {
+        "user_id" : 1,
+        "shelf_name": "asldkfj",
+        "shelf_desc": "WTF",
+        "have_read": true
+    }, 
 {
-    "shelf_name": "Cook books",
-    "shelf_desc": "eating my feelings",
-    "have_read": true
-},
-{
-    "shelf_name": "a;sldkfj",
-    "shelf_desc": "WTF",
+    "user_id" : 4,
+    "shelf_name": "womp",
+    "shelf_desc": "does it work?? ",
     "have_read": true
 }
-
 
 ]
