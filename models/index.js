@@ -19,8 +19,14 @@ User.hasMany(Review);
 Review.belongsTo(User);
 
 // // Book has many Review (one to many, mandatory)
-Book.hasMany(Review);
-Review.belongsTo(Book);
+Book.hasMany(Review, 
+    {
+        foreignKey: "book_id"
+    });
+Review.belongsTo(Book, 
+    {
+        foreignKey: "book_id"
+    });
 
 // // User many to many User through Followers (juntion table)
 // User.belongsToMany(User, { through: 'Followers' });

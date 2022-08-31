@@ -9,12 +9,12 @@ const app = express();
 // app.use(cors())
 const PORT = process.env.PORT || 3001;
 // Requiring our models for syncing
-const { User} = require('./models');
+const { User, Review, Book} = require('./models');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// app.use('/',allRoutes);
+app.use('/',allRoutes);
 
 sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {

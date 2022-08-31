@@ -1,3 +1,5 @@
+// const { DATE, Sequelize } = require('sequelize');
+const { DATE } = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -24,17 +26,26 @@ Review.init({
     pacing_rating: {
         type: DataTypes.INTEGER,
         allowNull:false
+    },
+    book_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: "book",
+            key: "id"
+        }
     }
     // date_created: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull:false
+    //     type: DataTypes.DATEONLY,
+    //     allowNull:false,
+    //     default: DATE.NOW
     // }
     // emotion: {
     //     type: DataTypes.STRING,
     //     allowNull:false
     // }
 },{
-    sequelize
+    sequelize, timestamps: true
 });
 
 module.exports= Review
