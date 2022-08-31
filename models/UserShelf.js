@@ -4,12 +4,12 @@ const sequelize = require('../config/connection');
 class UserShelf extends Model {}
 
 UserShelf.init({
-    // shelf_id: {
-    //     type: DataTypes.INTEGER,
-    //     allowNull: false,
-    //     primaryKey: true,
-    //     autoIncrement: true,
-    // },
+    shelf_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true,
+    },
     // FK id from User here
     shelf_name: {
         type: DataTypes.STRING,

@@ -1,6 +1,6 @@
 const User = require("./User")
 // const Book = require("./Book")
-// const UserShelf = require("./UserShelf")
+const UserShelf = require("./UserShelf")
 // const Review = require("./Review")
 
 // // user had many User Shelf(one to many, mandatory)
@@ -30,7 +30,7 @@ const User = require("./User")
 // module.exports = { User, Book, UserShelf, Review };
 
 
-module.exports = User
+// module.exports = User
 
-// module.exports = { User, UserShelf };
+module.exports = { User, UserShelf };
 
