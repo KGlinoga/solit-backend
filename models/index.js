@@ -1,7 +1,7 @@
 const User = require("./User")
-// const Book = require("./Book")
+const Book = require("./Book")
 // const UserShelf = require("./UserShelf")
-// const Review = require("./Review")
+const Review = require("./Review")
 
 // // user had many User Shelf(one to many, mandatory)
 // User.hasMany(UserShelf);
@@ -15,12 +15,12 @@ const User = require("./User")
 
 
 // // Users has many Review(one to many, mandatory)
-// User.hasMany(Review);
-// Review.belongsTo(User);
+User.hasMany(Review);
+Review.belongsTo(User);
 
 // // Book has many Review (one to many, mandatory)
-// Book.hasMany(Review);
-// Review.belongsTo(Book);
+Book.hasMany(Review);
+Review.belongsTo(Book);
 
 // // User many to many User through Followers (juntion table)
 // User.belongsToMany(User, { through: 'Followers' });
@@ -29,4 +29,4 @@ const User = require("./User")
 
 // module.exports = { User, Book, UserShelf, Review };
 
-module.exports = User
+module.exports = {User, Book, Review}

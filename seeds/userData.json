@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Joe",
+        "username": "joejoe",
+        "email": "joe@joe.joe"
+    },
+    {
+        "name": "Emmy",
+        "username": "emmyemmy",
+        "email": "emmy@joe.joe"
+    },
+    {
+        "name": "Dash",
+        "username": "DashDog",
+        "email": "dash@joe.joe"
+    }, 
+    {
+        "name": "Pepper",
+        "username": "PepperCat",
+        "email": "Pepper@joe.joe"
+    }
+]

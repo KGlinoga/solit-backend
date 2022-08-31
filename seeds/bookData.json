@@ -1,0 +1,21 @@
+[
+    {
+      "book_title": "My Book of Fun",
+
+      "author": "Asiyah Ahmed", 
+
+      "cover": "Artwork", 
+
+      "description": "blahblahblah", 
+
+      "ISBN": 2356,
+
+      "avg_plotRating": 4,
+
+      "avg_characterRating": 3,
+
+      "avg_accessRating": 5,
+
+      "avg_paceRating": 4
+    }
+  ]

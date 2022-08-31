@@ -1,28 +1,27 @@
 const sequelize = require("../config/connection");
-const User = require("../models")
+const {User, Review, Book} = require("../models");
+
+const userData = require("./userData.json")
+const bookData = require("./bookData.json")
+const reviewData = require("./reviewData.json")
+
 
 const seedMe = async () => {
     await sequelize.sync({ force: true });
-    await User.bulkCreate([
-        {
-            name: "Joe",
-            username: "joejoe",
-            email: "joe@joe.joe"
-        },
-        {
-            name: "Dash",
-            username: "DashDog",
-            email: "Dash@joe.joe"
-        }, 
-        {
-            name: "Pepper",
-            username: "PepperCat",
-            email: "Pepper@joe.joe"
-        }
+    await User.bulkCreate(userData, {
+        individualHooks: true,
+      });
+    
+  
+    await Book.bulkCreate(bookData, {
+        individualHooks: true,
+  });
 
-    ], {
-        individualHooks:true
-    })
+  
+  await Review.bulkCreate(reviewData, {
+        individualHooks: true,
+        returning: true,
+      });
 
     process.exit(0)
 };
