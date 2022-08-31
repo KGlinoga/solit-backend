@@ -14,8 +14,13 @@ const {User, UserShelf} = require('../models');
 //     res.json(req.body.User));
 
 router.get('/users', (req, res) => {
-    // Get all books from the book table
-    User.findAll().then((userData) => {
+    // Get all users from the user table
+    User.findAll({
+        include: [{
+            model: UserShelf,
+            as: 'userShelves'
+        }]
+    }).then((userData) => {
         res.json(userData);
     });
 });
@@ -27,7 +32,7 @@ router.get('/shelves', (req, res) => {
     });
 });
 
-// GET a single user
+// GET a single user WITH their shelves
 router.get('/users/:id', (req, res) => {
     // Get all books from the book table
     User.findByPk(req.params.id, {
