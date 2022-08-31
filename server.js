@@ -9,7 +9,7 @@ const app = express();
 // app.use(cors())
 const PORT = process.env.PORT || 3001;
 // Requiring our models for syncing
-const { User} = require('./models');
+const { User, UserShelf} = require('./models');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

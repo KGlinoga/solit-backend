@@ -29,4 +29,8 @@ const User = require("./User")
 
 // module.exports = { User, Book, UserShelf, Review };
 
+
 module.exports = User
+
+// module.exports = { User, UserShelf };
+
