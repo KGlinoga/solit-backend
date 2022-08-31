@@ -7,6 +7,7 @@ const UserShelf = require("./UserShelf");
 User.hasMany(UserShelf, {
     foreignKey: "user_id",
     onDelete: 'CASCADE',
+    onUpdate: 'CASCADE'
 });
 UserShelf.belongsTo(User, {
     foreignKey: "user_id",
