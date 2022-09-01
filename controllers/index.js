@@ -4,9 +4,9 @@ const router = express.Router();
 const { User, UserShelf } = require('../models');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-// const apiRoutes = require('./api');
+const apiRoutes = require('./api');
 
-// router.use('/api', apiRoutes);
+router.use('/api', apiRoutes);
 
 // router.use((req, res) => {
 //     res.send("<h1>Wrong Wroute!<h1>")
