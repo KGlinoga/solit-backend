@@ -43,6 +43,8 @@ router.post('/login', (req, res) => [
                 user: foundUser
         })
         }
+    }).catch(err => {
+        res.status(500).json({ msg: "an error occurred", err })
     })
 ])
 
@@ -51,17 +53,12 @@ router.post('/login', (req, res) => [
 // url: port/protected
 router.get('/protected', (req, res) => {
     const token = req.headers.authorization.split(' ')[1]
-    // res.json(token)
     try {
-        
         const userData = jwt.verify(token, process.env.JWT_SECRET)
         res.json({msg:`Welcome to your library ${userData.email}!  It's SO LIT!`})
     } catch {
-
         res.status(403).json({msg:'invalid token'})
     }
-    
-  
 })
 
 // gets all users, includes their shelves
@@ -110,5 +107,11 @@ router.get('/users/:id/:shelf_id', (req, res) => {
     });
 });
         
+// tester route for connecting w/ React FE!
+// url: port/hello
+router.get('/hello', (req, res) => {
+    res.json({msg:'hello from express!'})
+})
+
 
 module.exports = router;

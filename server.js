@@ -1,12 +1,12 @@
 const express = require('express');
 const allRoutes = require('./controllers');
 const sequelize = require('./config/connection');
-// const cors = require("cors")
+const cors = require("cors")
 
 // Sets up the Express App
 // =============================================================
 const app = express();
-// app.use(cors())
+app.use(cors())
 const PORT = process.env.PORT || 3001;
 // Requiring our models for syncing
 const { User, UserShelf} = require('./models');
