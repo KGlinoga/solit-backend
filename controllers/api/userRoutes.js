@@ -15,7 +15,31 @@ router.get('/', (req, res) => {
 // user Update (PUT)
 // url: Port/api/users/:id/update
 
-router.put('/:id/update', )
+
+router.put('/:id/update', (req, res) => {
+    // Calls the update method on the User model
+    User.update(
+        {
+            // All the fields you can update and the data attached to the request body.
+            name: req.body.name,
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+           
+        },
+        {
+            // Gets the user based on the username given in the request parameters
+            where: {
+                id: req.params.id,
+            },
+        }
+    )
+        .then((updatedUser) => {
+            // Sends the updated book as a json response
+            res.json(updatedUser);
+        })
+        .catch((err) => res.json(err));
+});
 
 // user Delete (DELETE)
 // url: Port/api/users/
