@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const { User, UserShelf } = require('../models');
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+
 
 // const apiRoutes = require('./api');
 
@@ -30,15 +32,26 @@ router.post('/login', (req, res) => [
         else if (!bcrypt.compareSync(req.body.password,foundUser.password)) {
             return res.status(401).json({ msg: "invalid login credentials!" })
         } else {
-            return res.json(foundUser)
+            const token = jwt.sign({
+                id: foundUser.id,
+                email: foundUser.email
+            }, process.env.JWT_SECRET, {
+                expiresIn: "2h"
+            })
+            return res.json({
+                token: token,
+                user: foundUser
+        })
         }
     })
 ])
 
 
-// 
+// How to have protected routes(Must be logged in to use)
 // url: port/protected
-// router.get('/protected')
+router.get('/protected', (req, res) => {
+    
+})
 
 // gets all users, includes their shelves
 //  url: port/users
