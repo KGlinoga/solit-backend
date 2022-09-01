@@ -50,7 +50,18 @@ router.post('/login', (req, res) => [
 // How to have protected routes(Must be logged in to use)
 // url: port/protected
 router.get('/protected', (req, res) => {
+    const token = req.headers.authorization.split(' ')[1]
+    // res.json(token)
+    try {
+        
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        res.json({msg:`Welcome to your library ${userData.email}!  It's SO LIT!`})
+    } catch {
+
+        res.status(403).json({msg:'invalid token'})
+    }
     
+  
 })
 
 // gets all users, includes their shelves
