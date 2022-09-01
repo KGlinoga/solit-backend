@@ -11,28 +11,40 @@ router.get('/', (req, res) => {
     res.send("welcome!")
 });
 
-// router.get('/', async (req, res) => {
-//     try {
-//         const userData = await User.findAll({
-
-//         });
-
-//         res.status(200).json(userData);
-//     } catch (err) {
-//         res.status(400).json(err);
-//     };
-
-// });
-
 
 // user Update (PUT)
-// url: Port/api/userupdate
+// url: Port/api/users/:id/update
 
-
+router.put('/:id/update', )
 
 // user Delete (DELETE)
-// url: Port/api/userupdate
+// url: Port/api/users/
+router.delete('/user-from-token', (req, res) => {
+    // Looks for the users based on id given in the request parameters and deletes the instance from the database
+    //     User.destroy({
+    //         where: {
+    //             id: req.params.id,
+    //         },
+    //     })
+    //         .then((deletedUser) => {
+    //             res.json(deletedUser);
+    //         })
+    //         .catch((err) => res.json(err));
+    // });
+    const token = req.headers.authorization.split(" ")[1]
+    try {
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        User.destroy(userData.id, {
 
+        }).then(userData => {
+            res.json(userData)
+        }).catch(err => {
+            res.status(500).json({ msg: "an error occurred", err })
+        })
+    } catch {
+        res.status(403).json({ msg: "invalid token" })
+    }
+});
 
 
 
