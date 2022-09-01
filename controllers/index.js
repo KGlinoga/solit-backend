@@ -1,6 +1,8 @@
-const router = require('express').Router();
+// const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const {User, UserShelf} = require('../models');
-const apiRoutes = require('./api');
+// const apiRoutes = require('./api');
 
 // router.use('/api', apiRoutes);
 
@@ -8,6 +10,9 @@ const apiRoutes = require('./api');
 //     res.send("<h1>Wrong Wroute!<h1>")
 // });
 
+router.get('/', (req, res) => {
+    res.send("welcome!")
+});
 
 
 // gets all users, includes their shelves

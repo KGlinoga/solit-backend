@@ -1,5 +1,6 @@
 const { Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 class User extends Model {}
 
@@ -26,16 +27,15 @@ User.init({
         validate: {
             isEmail: true,
         },
-    }
-    // password: {
-    //     password: {
-    //         type: DataTypes.STRING,
-    //         allowNull: false,
-    //         validate: {
-    //             len: [8],
-    //         },
-    //     },
-    // }
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+            validate: {
+                len: [8],
+            },
+        },
+    
     // dailyDiary: {
     //     type: 
     //     allowNull: true
@@ -50,6 +50,12 @@ User.init({
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
+    hooks: {
+        beforeCreate: function (newUser) {
+            newUser.password = bcrypt.hashSync(newUser.password, 4);
+            return newUser
+        }
+    }
 });
 
 module.exports = User;
