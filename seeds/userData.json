@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Joe",
+        "username": "joejoe",
+        "email": "joe@joe.joe", 
+        "password": "password"
+    }, 
+    {
+        "name": "Dash",
+        "username": "DashDog",
+        "email": "Dash@joe.joe",
+        "password" : "password"
+
+    }, 
+    {
+        "name": "Pepper",
+        "username": "PepperCat",
+        "email": "Pepper@joe.joe",
+        "password" : "password"
+
+    }, 
+    {
+        "name": "Marty",
+        "username": "McFly",
+        "email": "Timetraveller@joe.joe",
+        "password" : "password"
+
+    }, 
+{
+    "name": "Biff",
+    "username": "LikeATree",
+    "email": "AndGetOutOfHere@joe.joe",
+    "password" : "password"
+
+}
+
+
+]
