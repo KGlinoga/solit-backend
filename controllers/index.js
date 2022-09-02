@@ -1,12 +1,16 @@
 // const router = require('express').Router();
 const express = require('express');
 const router = express.Router();
-const { User, UserShelf } = require('../models');
+const { User, UserShelf, Review, Book } = require('../models');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
+
+// router.use((req, res) => {
+//   res.send("<h1>Wrong Route!</h1>")
+// });
 
 // router.use((req, res) => {
 //     res.send("<h1>Wrong Wroute!<h1>")
@@ -246,6 +250,7 @@ router.get('/users/:id/:shelf_id', (req, res) => {
 router.get('/hello', (req, res) => {
     res.json({msg:'hello from express!'})
 })
+
 
 
 module.exports = router;
