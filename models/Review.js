@@ -13,19 +13,35 @@ Review.init({
     },
     plot_rating: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull:false,
+        validate: {
+            min: 0,
+            max: 5,
+        }
    },
     character_rating: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull:false,
+        validate: {
+            min: 0,
+            max: 5,
+        }
     },
     accessibility_rating: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull:false,
+        validate: {
+            min: 0,
+            max: 5,
+        }
     },
     pacing_rating: {
         type: DataTypes.INTEGER,
-        allowNull:false
+        allowNull:false,
+        validate: {
+            min: 0,
+            max: 5,
+        }
     },
     book_id: {
         type: DataTypes.INTEGER,

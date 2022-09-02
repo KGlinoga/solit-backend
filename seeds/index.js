@@ -1,12 +1,10 @@
 const sequelize = require("../config/connection");
 const {Review, Book} = require("../models");
+const { User, UserShelf } = require("../models")
 
 const userData = require("./userData.json")
 const bookData = require("./bookData.json")
 const reviewData = require("./reviewData.json")
-const { User, UserShelf } = require("../models")
-
-const userData = require('./userData.json');
 const userShelfData = require('./userShelfData.json');
 
 const seedMe = async () => {

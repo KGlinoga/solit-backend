@@ -1,11 +1,7 @@
 const User = require("./User")
 const Book = require("./Book")
-// const UserShelf = require("./UserShelf")
+const UserShelf = require("./UserShelf")
 const Review = require("./Review")
-
-// const Book = require("./Book");
-const UserShelf = require("./UserShelf");
-// const Review = require("./Review");
 
 // // user had many User Shelf(one to many, mandatory)
 User.hasMany(UserShelf, {

@@ -1,23 +1,17 @@
-<<<<<<< HEAD
-const router = require('express').Router();
-=======
 // const router = require('express').Router();
 const express = require('express');
 const router = express.Router();
-const { User, UserShelf } = require('../models');
+const { User, UserShelf, Review, Book } = require('../models');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
->>>>>>> origin
 const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
 
-<<<<<<< HEAD
-router.use((req, res) => {
-  res.send("<h1>Wrong Route!</h1>")
-});
+// router.use((req, res) => {
+//   res.send("<h1>Wrong Route!</h1>")
+// });
 
-=======
 // router.use((req, res) => {
 //     res.send("<h1>Wrong Wroute!<h1>")
 // });
@@ -145,5 +139,5 @@ router.get('/hello', (req, res) => {
 })
 
 
->>>>>>> origin
+
 module.exports = router;

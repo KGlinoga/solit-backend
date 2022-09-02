@@ -23,7 +23,9 @@ router.get("/", (req, res) => {
   router.post("/", (req, res) => {
     Review.create(req.body).then((result) => {
       res.json(result);
-    });
+    }).catch((error) => {
+        res.status(503).json({error: error})
+    })
   });
   
   router.put("/:id", (req, res) => {
