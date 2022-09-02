@@ -120,7 +120,7 @@ router.get("/check-token", (req, res) => {
     }
 })
 
-// Get one user by token WORKS 
+// Get one user by token WORKS ***7:38pm
 router.get("/user-from-token", (req, res) => {
     const token = req.headers.authorization.split(" ")[1]
     try {
