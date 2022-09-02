@@ -11,5 +11,17 @@ router.use('/book', bookRoutes);
 
 
 
+
+const userRoutes = require("./userRoutes")
+// // Asiya's code
+// // const reviewRoutes = require("./reviewRoutes")
+// // const bookRoutes = require("./bookRoutes")
+
+// // router.use('/review', reviewRoutes);
+// // router.use('/book', bookRoutes);
+
+router.use("/users", userRoutes);
+// router.use('/userShelfRoutes');
+
 module.exports = router;
 

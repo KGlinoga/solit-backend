@@ -3,9 +3,19 @@ const Book = require("./Book")
 // const UserShelf = require("./UserShelf")
 const Review = require("./Review")
 
+// const Book = require("./Book");
+const UserShelf = require("./UserShelf");
+// const Review = require("./Review");
+
 // // user had many User Shelf(one to many, mandatory)
-// User.hasMany(UserShelf);
-// UserShelf.belongsTo(User);
+User.hasMany(UserShelf, {
+    foreignKey: "user_id",
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE'
+});
+UserShelf.belongsTo(User, {
+    foreignKey: "user_id",
+});
 
 // // userShelf many to many Book 
 // // userShelf.belongstomany(Book) through UserBooks(Junction Table)
@@ -35,4 +45,8 @@ Review.belongsTo(Book,
 
 // module.exports = { User, Book, UserShelf, Review };
 
-module.exports = {User, Book, Review}
+
+module.exports = {User, Book, Review, UserShelf}
+
+// module.exports = User
+
