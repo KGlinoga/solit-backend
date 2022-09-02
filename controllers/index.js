@@ -192,6 +192,35 @@ router.delete("/delete", async (req, res) => {
     }
 })
 
+// attempt at updating a user (PUT)
+// url: port/update
+router.put("/update", async (req, res) => {
+    // console.log(req.body);
+    const token = req.headers.authorization.split(" ")[1]
+    try {
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        // res.json(userData)
+         
+        const updateUser = User.update({
+            
+            // All the fields you can update and the data attached to the request body.
+          
+                name: req.body.name,
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+            },
+          {
+            where: {
+                id: userData.id
+            }
+        });
+return res.status(200).json({ msg: `We updated your account ${userData.email}!` });
+
+    } catch {
+        res.status(403).json({ msg: "invalid token" })
+    }
+})
 
 // Public UserShelf Routes: 
 
