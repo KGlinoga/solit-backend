@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Review, User } = require('../../models');
 
+
 router.get("/", (req, res) => {
     Review.findAll({
       include: [User],
