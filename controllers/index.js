@@ -12,9 +12,9 @@ router.use('/api', apiRoutes);
 //     res.send("<h1>Wrong Wroute!<h1>")
 // });
 
-router.get('/', (req, res) => {
-    res.send("welcome!")
-});
+// router.get('/', (req, res) => {
+//     res.send("welcome!")
+// });
 
 // Public USER routes (Create/Sign Up*, Log in, View)
 
@@ -104,15 +104,101 @@ router.get('/protected', (req, res) => {
     try {
         const userData = jwt.verify(token, process.env.JWT_SECRET)
         res.json({msg:`Welcome to your library ${userData.email}!  It's SO LIT!`})
+        
     } catch {
         res.status(403).json({msg:'invalid token'})
     }
 })
 
+router.get("/check-token", (req, res) => {
+    const token = req.headers.authorization.split(" ")[1]
+    try {
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        res.json(userData)
+    } catch {
+        res.status(403).json({ msg: "invalid token" })
+    }
+})
+
+// Get one user by token WORKS ***7:38pm
+router.get("/user-from-token", (req, res) => {
+    const token = req.headers.authorization.split(" ")[1]
+    try {
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        User.findByPk(userData.id, {
+
+        }).then(userData => {
+            res.json(userData)
+        }).catch(err => {
+            res.status(500).json({ msg: "an error occurred", err })
+        })
+    } catch {
+        res.status(403).json({ msg: "invalid token" })
+    }
+})
+
+// DELETE ONE USER BY TOKEN - NOPE.stillNOPE
+// router.delete("/d-user-from-token", (req, res) => {
+//     const token = req.headers.authorization.split(" ")[1]
+//     try {
+//         const userData = jwt.verify(token, process.env.JWT_SECRET)
+//         User.destroy( {
+//             where: {id: req.params.id}
+//         }).then(userData => {
+//             res.json(userData)
+//         }).catch(err => {
+//             res.status(500).json({ msg: "an error occurred", err })
+//         })
+//     } catch {
+//         res.status(403).json({ msg: "invalid token" })
+//     }
+// })
+
+// // DELETE TRIAL W/ JWT
+// // Delete route for a book with a matching isbn
+router.delete('/protected/:token', (req, res) => {
+    // Looks for the books based on isbn given in the request parameters and deletes the instance from the database
+    User.destroy({
+        where: {
+            token: req.body.token,
+        },
+    })
+        .then((deletedUser) => {
+            res.json(deletedUser);
+        })
+        .catch((err) => res.json(err));
+});
+
+
+
+// LAST DELETE JWT TRY:
+
+router.delete("/delete", async (req, res) => {
+    // console.log(req.body);
+    const token = req.headers.authorization.split(" ")[1]
+    try {
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        // res.json(userData)
+        //halp?  
+        const leaveSoLit = User.destroy({
+            where: {
+                id: userData.id
+            }
+        })
+        return res.status(200).json({ msg: `kthxbyeeee ${userData.email}!` })
+
+    } catch {
+        res.status(403).json({ msg: "invalid token" })
+    }
+})
+
+
 // Public UserShelf Routes: 
 
 // gets all shelves
 // url: port/shelves
+
+
 router.get('/shelves', (req, res) => {
     // Get all books from the book table
     UserShelf.findAll().then((userShelfData) => {
