@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Review, User } = require('../../models');
 const jwt = require('jsonwebtoken');
 
+
 router.get("/", (req, res) => {
   Review.findAll({
     include: [User],
