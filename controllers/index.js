@@ -120,7 +120,7 @@ router.get("/check-token", (req, res) => {
     }
 })
 
-// Get one user by token WORKS ***7:38pm
+// Get one user by token WORKS 
 router.get("/user-from-token", (req, res) => {
     const token = req.headers.authorization.split(" ")[1]
     try {
@@ -156,23 +156,23 @@ router.get("/user-from-token", (req, res) => {
 
 // // DELETE TRIAL W/ JWT
 // // Delete route for a book with a matching isbn
-router.delete('/protected/:token', (req, res) => {
-    // Looks for the books based on isbn given in the request parameters and deletes the instance from the database
-    User.destroy({
-        where: {
-            token: req.body.token,
-        },
-    })
-        .then((deletedUser) => {
-            res.json(deletedUser);
-        })
-        .catch((err) => res.json(err));
-});
+// router.delete('/protected/:token', (req, res) => {
+//     // Looks for the books based on isbn given in the request parameters and deletes the instance from the database
+//     User.destroy({
+//         where: {
+//             token: req.body.token,
+//         },
+//     })
+//         .then((deletedUser) => {
+//             res.json(deletedUser);
+//         })
+//         .catch((err) => res.json(err));
+// });
 
 
 
-// LAST DELETE JWT TRY:
-
+// Delete User Route, protected by token, WORKS
+//  url: port/delete
 router.delete("/delete", async (req, res) => {
     // console.log(req.body);
     const token = req.headers.authorization.split(" ")[1]
@@ -192,7 +192,7 @@ router.delete("/delete", async (req, res) => {
     }
 })
 
-// attempt at updating a user (PUT)
+// Updating a user (PUT) protected by Token WORKS
 // url: port/update
 router.put("/update", async (req, res) => {
     // console.log(req.body);
@@ -226,8 +226,6 @@ return res.status(200).json({ msg: `We updated your account ${userData.email}!` 
 
 // gets all shelves
 // url: port/shelves
-
-
 router.get('/shelves', (req, res) => {
     // Get all books from the book table
     UserShelf.findAll().then((userShelfData) => {
