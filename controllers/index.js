@@ -175,56 +175,56 @@ router.get("/user-from-token", (req, res) => {
 
 
 
-// Delete User Route, protected by token, WORKS
-//  url: port/delete
-router.delete("/delete", async (req, res) => {
-    // console.log(req.body);
-    const token = req.headers.authorization.split(" ")[1]
-    try {
-        const userData = jwt.verify(token, process.env.JWT_SECRET)
-        // res.json(userData)
-        //halp?  
-        const leaveSoLit = User.destroy({
-            where: {
-                id: userData.id
-            }
-        })
-        return res.status(200).json({ msg: `kthxbyeeee ${userData.email}!` })
+// // Delete User Route, protected by token, WORKS
+// //  url: port/delete
+// router.delete("/delete", async (req, res) => {
+//     // console.log(req.body);
+//     const token = req.headers.authorization.split(" ")[1]
+//     try {
+//         const userData = jwt.verify(token, process.env.JWT_SECRET)
+//         // res.json(userData)
+//         //halp?  
+//         const leaveSoLit = User.destroy({
+//             where: {
+//                 id: userData.id
+//             }
+//         })
+//         return res.status(200).json({ msg: `kthxbyeeee ${userData.email}!` })
 
-    } catch {
-        res.status(403).json({ msg: "invalid token" })
-    }
-})
+//     } catch {
+//         res.status(403).json({ msg: "invalid token" })
+//     }
+// })
 
 // Updating a user (PUT) protected by Token WORKS
 // url: port/update
-router.put("/update", async (req, res) => {
-    // console.log(req.body);
-    const token = req.headers.authorization.split(" ")[1]
-    try {
-        const userData = jwt.verify(token, process.env.JWT_SECRET)
-        // res.json(userData)
+// router.put("/update", async (req, res) => {
+//     // console.log(req.body);
+//     const token = req.headers.authorization.split(" ")[1]
+//     try {
+//         const userData = jwt.verify(token, process.env.JWT_SECRET)
+//         // res.json(userData)
          
-        const updateUser = User.update({
+//         const updateUser = User.update({
             
-            // All the fields you can update and the data attached to the request body.
+//             // All the fields you can update and the data attached to the request body.
           
-                name: req.body.name,
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password
-            },
-          {
-            where: {
-                id: userData.id
-            }
-        });
-return res.status(200).json({ msg: `We updated your account ${userData.email}!` });
+//                 name: req.body.name,
+//             username: req.body.username,
+//             email: req.body.email,
+//             password: req.body.password
+//             },
+//           {
+//             where: {
+//                 id: userData.id
+//             }
+//         });
+// return res.status(200).json({ msg: `We updated your account ${userData.email}!` });
 
-    } catch {
-        res.status(403).json({ msg: "invalid token" })
-    }
-})
+//     } catch {
+//         res.status(403).json({ msg: "invalid token" })
+//     }
+// })
 
 // Public UserShelf Routes: 
 

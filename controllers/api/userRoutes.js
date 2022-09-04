@@ -43,5 +43,26 @@ router.put("/update", async (req, res) => {
     }
 })
 
+// Delete User Route, protected by token, WORKS
+//  url: port/api/users/delete
+router.delete("/delete", async (req, res) => {
+    // console.log(req.body);
+    const token = req.headers.authorization.split(" ")[1]
+    try {
+        const userData = jwt.verify(token, process.env.JWT_SECRET)
+        // res.json(userData)
+        //halp?  
+        const leaveSoLit = User.destroy({
+            where: {
+                id: userData.id
+            }
+        })
+        return res.status(200).json({ msg: `kthxbyeeee ${userData.email}!` })
+
+    } catch {
+        res.status(403).json({ msg: "invalid token" })
+    }
+})
+
 
 module.exports = router; 
