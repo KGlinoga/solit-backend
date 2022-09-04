@@ -109,6 +109,7 @@ router.get('/protected', (req, res) => {
         const userData = jwt.verify(token, process.env.JWT_SECRET)
         res.json({msg:`Welcome to your library ${userData.email}!  It's SO LIT!`})
         
+        
     } catch {
         res.status(403).json({msg:'invalid token'})
     }
