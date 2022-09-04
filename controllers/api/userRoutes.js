@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // test Route: GET
-// url: port/api/users
+// url: port/api/
 router.get('/', (req, res) => {
     res.send("hi!")
 });
