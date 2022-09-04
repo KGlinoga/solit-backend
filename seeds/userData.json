@@ -2,39 +2,41 @@
     {
         "name": "Joe",
         "username": "joejoe",
-        "email": "joe@joe.joe"
+        "email": "joe@joe.joe",
+        "password": "password"
     },
     {
         "name": "Emmy",
         "username": "emmyemmy",
-        "email": "emmy@joe.joe"
+        "email": "emmy@joe.joe",
+        "password": "password"
+
     },
     {
         "name": "Dash",
         "username": "DashDog",
-        "email": "dash@joe.joe", 
+        "email": "dash@joe.joe",
         "password": "password"
-    }, 
+    },
     {
         "name": "Pepper",
         "username": "PepperCat",
-        "email": "Pepper@joe.joe"
-    },
-    {
+        "email": "Pepper@joe.joe",
+        "password": "password"
+
+    }, {
         "name": "Marty",
         "username": "McFly",
         "email": "Timetraveller@joe.joe",
-        "password" : "password"
+        "password": "password"
 
-    }, 
-    {
-    "name": "Biff",
-    "username": "LikeATree",
-    "email": "AndGetOutOfHere@joe.joe",
-    "password" : "password"
+    }, {
+        "name": "Biff",
+        "username": "LikeATree",
+        "email": "AndGetOutOfHere@joe.joe",
+        "password": "password"
 
     }
 
 
 ]
-
