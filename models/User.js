@@ -12,13 +12,22 @@ User.init({
         primaryKey: true,
         autoIncrement: true,
     },
-    name: {
-         type: DataTypes.STRING,
-         allowNull:false
+    firstName: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        allowNull: false
     },
     username: {
         type: DataTypes.STRING,
         allowNull:false
+    },
+    profilePicURL: {
+        type: DataTypes.STRING,
+        allowNull: true,
+        // default: null
     },
     email: {
         type: DataTypes.STRING,

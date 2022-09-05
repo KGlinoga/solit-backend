@@ -26,10 +26,13 @@ router.put("/update", async (req, res) => {
 
             // All the fields you can update and the data attached to the request body.
 
-            name: req.body.name,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            profilePicURL: req.body.profilePicURL,
             username: req.body.username,
             email: req.body.email,
             password: req.body.password
+
         },
             {
                 where: {
