@@ -57,7 +57,9 @@ router.delete("/delete", async (req, res) => {
                 id: userData.id
             }
         })
-        return res.status(200).json({ msg: `kthxbyeeee ${userData.email}!` })
+        return res.status(200).json({
+            msg: `kthxbyeeee ${userData.email}!`
+        })
 
     } catch {
         res.status(403).json({ msg: "invalid token" })

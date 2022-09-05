@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 
 
 
-// Create a Shelf - POST - JWT PROTECTED WORKS, at least allows a post 7pm Sunday
+// Create a Shelf - POST - JWT PROTECTED WORKS
 // url: port/api/userShelfRoutes/newShelf
 router.post("/newShelf", async (req, res) => {
     // console.log(req.body);
@@ -32,6 +32,7 @@ router.post("/newShelf", async (req, res) => {
         //halp?  
         const newShelf = await UserShelf.create({
             shelf_name: req.body.shelf_name,
+            shelf_desc: req.body.shelf_desc,
             user_id:userData.id
         })
         return res.status(200).json({ msg: `We added your shelf ${userData.email}!` })
