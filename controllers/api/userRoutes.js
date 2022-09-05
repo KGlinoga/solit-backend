@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 // test Route: GET
-// url: port/api/users
+// url: port/api/
 router.get('/', (req, res) => {
     res.send("hi!")
 });
@@ -57,7 +57,9 @@ router.delete("/delete", async (req, res) => {
                 id: userData.id
             }
         })
-        return res.status(200).json({ msg: `kthxbyeeee ${userData.email}!` })
+        return res.status(200).json({
+            msg: `kthxbyeeee ${userData.email}!`
+        })
 
     } catch {
         res.status(403).json({ msg: "invalid token" })

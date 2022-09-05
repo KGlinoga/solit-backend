@@ -19,15 +19,18 @@ UserShelf.init({
     },
     shelf_name: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: true,
+        default: null
     },
     shelf_desc: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: true,
+        default: null
     },
     have_read: {
         type: DataTypes.BOOLEAN,
-        allowNull: true
+        allowNull: true,
+        default: null
     },
   
 }, {
