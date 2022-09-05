@@ -61,7 +61,8 @@ router.put("/update", async (req, res) => {
         },
             {
                 where: {
-                    id: userData.id
+                    shelf_id: req.body.shelf_id,
+                    user_id: userData.id
                 }
             });
         return res.status(200).json({ msg: `We updated your shelf ${userData.email}!` });
