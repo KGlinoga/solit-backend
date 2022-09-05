@@ -33,6 +33,7 @@ router.post("/newShelf", async (req, res) => {
         const newShelf = await UserShelf.create({
             shelf_name: req.body.shelf_name,
             shelf_desc: req.body.shelf_desc,
+            have_read: req.body.hav_read,
             user_id:userData.id
         })
         return res.status(200).json({ msg: `We added your shelf ${userData.email}!` })
