@@ -74,7 +74,7 @@ router.put("/update", async (req, res) => {
 
 
 // // Delete UserShelf Route, protected by token, first try noon-ish Sunday
-//  url: port/api/userShelf/delete
+//  url: port/api/userShelfRoutes/delete
 router.delete("/delete", async (req, res) => {
     // console.log(req.body);
     const token = req.headers.authorization.split(" ")[1]
@@ -82,9 +82,10 @@ router.delete("/delete", async (req, res) => {
         const userData = jwt.verify(token, process.env.JWT_SECRET)
         // res.json(userData)
         //halp?  
-        const deleteShelf = UserShelf.destroy({
+        const deleteShelf = await UserShelf.destroy({
             where: {
-                id: userData.id.shelf_id
+                shelf_id: req.body.shelf_id,
+                user_id: userData.id
             }
         })
         return res.status(200).json({ msg: `We've deleted your shelf ${userData.email}!` })
