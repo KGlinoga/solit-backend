@@ -16,8 +16,8 @@ router.use('/api', apiRoutes);
 //     res.send("<h1>Wrong Wroute!<h1>")
 // });
 
-// router.get('/', (req, res) => {
-//     res.send("welcome!")
+// router.get('/*', (req, res) => {
+//     res.status(404).json({ msg: "Oops! There's nothing here!" })
 // });
 
 // Public USER routes (Create/Sign Up*, Log in, View)
@@ -83,6 +83,8 @@ router.get('/users', (req, res) => {
         }]
     }).then((userData) => {
         res.json(userData);
+    }).catch(err => {
+        res.status(500).json({ msg: "an error occurred", err })
     });
 });
 
@@ -97,6 +99,8 @@ router.get('/users/:id', (req, res) => {
         }]
     }).then((userData) => {
         res.json(userData);
+    }).catch(err => {
+        res.status(500).json({ msg: "an error occurred", err })
     });
 });
 

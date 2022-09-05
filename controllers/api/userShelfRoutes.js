@@ -54,9 +54,7 @@ router.put("/update", async (req, res) => {
         // res.json(userData)
 
         const updateUserShelf = UserShelf.update({
-
-            // All the fields you can update and the data attached to the request body.
-
+            // All the fields you can update and the data attached to the request body
             shelf_name: req.body.shelf_name,
             shelf_desc: req.body.shelf_desc,
             have_read: req.body.have_read
