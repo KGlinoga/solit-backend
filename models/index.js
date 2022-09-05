@@ -4,14 +4,8 @@ const UserShelf = require("./UserShelf")
 const Review = require("./Review")
 
 // // user had many User Shelf(one to many, mandatory)
-User.hasMany(UserShelf, {
-    foreignKey: "user_id",
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE'
-});
-UserShelf.belongsTo(User, {
-    foreignKey: "user_id",
-});
+User.hasMany(UserShelf);
+UserShelf.belongsTo(User);
 
 // // userShelf many to many Book 
 // // userShelf.belongstomany(Book) through UserBooks(Junction Table)

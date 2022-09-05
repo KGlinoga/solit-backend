@@ -9,8 +9,6 @@ const userShelfRoutes = require('./userShelfRoutes')
 router.use('/user', userRoutes);
 router.use('/review', reviewRoutes);
 router.use('/book', bookRoutes);
-
-router.use('/book', bookRoutes);
 router.use('/userShelfRoutes', userShelfRoutes);
 
 
