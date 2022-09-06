@@ -1,0 +1,28 @@
+[
+    {
+      "review_text": "This book was great!",
+
+      "plot_rating": 4, 
+
+      "character_rating": 3, 
+
+      "accessibility_rating": 5, 
+
+      "pacing_rating": 4,
+
+      "book_id": 1
+    },
+    {
+      "review_text": "This book was decent...",
+
+      "plot_rating": 3, 
+
+      "character_rating": 2, 
+
+      "accessibility_rating": 1, 
+
+      "pacing_rating": 4,
+
+      "book_id": 1
+    }
+  ]

@@ -1,0 +1,42 @@
+[
+    {
+
+        "firstName": "Joe",
+        "lastName": "Smith",
+        "username": "joejoe",
+   
+        "email": "joe@joe.joe",
+        "password": "password"
+    },
+{
+
+    "firstName": "Dash",
+    "lastName": "Smith",
+    "username": "DashDog",
+
+    "email": "Dash@dog.com",
+    "password": "password"
+}
+,
+{
+
+    "firstName": "Pepper",
+    "lastName": "Smith",
+    "username": "PepperCat",
+
+    "email": "Pepper@cat.com",
+    "password": "password"
+}
+,
+{
+
+    "firstName": "Jen",
+    "lastName": "Walters",
+    "username": "SheHulk",
+
+    "email": "jen@avengers.com",
+    "password": "password"
+}
+
+]
+    
