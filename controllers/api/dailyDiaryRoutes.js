@@ -1,13 +1,10 @@
 const router = require('express').Router();
-const { Review, User } = require('../../models');
+const { DailyDiary, User } = require('../../models');
 const jwt = require('jsonwebtoken');
 
 
-router.get("/:book_id", (req, res) => {
-  Review.findAll({
-    where: {
-      ol_key: req.params.book_id
-    },
+router.get("/", (req, res) => {
+  DailyDiary.findAll({
     include: [User],
   }).then((result) => {
     res.json(result);
@@ -15,7 +12,7 @@ router.get("/:book_id", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Review.findOne({
+  DailyDiary.findOne({
     where: {
       id: req.params.id,
     },
@@ -25,28 +22,23 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.post("/review-from-token", (req, res) => {
-  
+router.post("/diary-from-token", (req, res) => {
+
   const token = req.headers.authorization.split(" ")[1]
   try {
     console.log(token)
     const userData = jwt.verify(token, process.env.JWT_SECRET)
     console.log("user data")
     console.log(userData)
-    Review.create(
+    DailyDiary.create(
       {
-        review_title: req.body.review_title,
-        review_author: req.body.review_author,
-        review_text: req.body.review_text,
-        plot_rating: req.body.plot_rating,
-        character_rating: req.body.character_rating,
-        accessibility_rating: req.body.accessibility_rating,
-        pacing_rating: req.body.pacing_rating,
-        ol_key: req.body.ol_key,
+        diary_title: req.body.diary_title,
+        book_title: req.body.book_title,
+        diary_text: req.body.diary_text,
         userId: userData.id
 
-      }).then(reviewData => {
-        res.json(reviewData)
+      }).then(diaryData => {
+        res.json(diaryData)
       }).catch(err => {
         res.status(500).json({ msg: "an error occurred", err })
       })
@@ -56,7 +48,7 @@ router.post("/review-from-token", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Review.update(
+  DailyDiary.update(
     req.body,
     {
       where: {
@@ -73,7 +65,7 @@ router.put("/:id", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  Review.destroy({
+  DailyDiary.destroy({
     where: {
       id: req.params.id,
     },

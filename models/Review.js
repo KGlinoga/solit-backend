@@ -1,4 +1,3 @@
-// const { DATE, Sequelize } = require('sequelize');
 const { DATE } = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
@@ -6,7 +5,14 @@ const sequelize = require('../config/connection');
 class Review extends Model {}
 
 Review.init({
-    // add properites here, ex:
+    review_title: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
+    review_author: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
     review_text: {
         type: DataTypes.TEXT,
         allowNull:false
@@ -43,23 +49,10 @@ Review.init({
             max: 5,
         }
     },
-    book_id: {
+    ol_key: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-            model: "book",
-            key: "id"
-        }
+        allowNull: false
     }
-    // date_created: {
-    //     type: DataTypes.DATEONLY,
-    //     allowNull:false,
-    //     default: DATE.NOW
-    // }
-    // emotion: {
-    //     type: DataTypes.STRING,
-    //     allowNull:false
-    // }
 },{
     sequelize, timestamps: true
 });

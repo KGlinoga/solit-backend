@@ -1,4 +1,3 @@
-// const router = require('express').Router();
 const express = require('express');
 const router = express.Router();
 const { User, UserShelf, Review, Book } = require('../models');
@@ -7,18 +6,6 @@ const jwt = require("jsonwebtoken");
 const apiRoutes = require('./api');
 
 router.use('/api', apiRoutes);
-
-// router.use((req, res) => {
-//   res.send("<h1>Wrong Route!</h1>")
-// });
-
-// router.use((req, res) => {
-//     res.send("<h1>Wrong Wroute!<h1>")
-// });
-
-// router.get('/*', (req, res) => {
-//     res.status(404).json({ msg: "Oops! There's nothing here!" })
-// });
 
 // Public USER routes (Create/Sign Up*, Log in, View)
 
