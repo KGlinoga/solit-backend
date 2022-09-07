@@ -1,5 +1,9 @@
 [
     {
+      "review_title": "Five stars!",
+
+      "review_author": "Asiyah Ahmed", 
+
       "review_text": "This book was great!",
 
       "plot_rating": 4, 
@@ -10,9 +14,13 @@
 
       "pacing_rating": 4,
 
-      "book_id": 1
+      "ol_key": 1
     },
     {
+      "review_title": "Three stars!",
+
+      "review_author": "Asiyah Ahmed", 
+
       "review_text": "This book was decent...",
 
       "plot_rating": 3, 
@@ -23,6 +31,6 @@
 
       "pacing_rating": 4,
 
-      "book_id": 1
+      "ol_key": 1
     }
   ]
