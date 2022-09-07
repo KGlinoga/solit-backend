@@ -3,10 +3,6 @@ const allRoutes = require('./controllers');
 const sequelize = require('./config/connection');
 const cors = require("cors")
 
-// const { Review, Book} = require('./models');
-
-// const { User, UserShelf} = require('./models');
-
 const app = express();
 app.use(cors())
 const PORT = process.env.PORT || 3001;
