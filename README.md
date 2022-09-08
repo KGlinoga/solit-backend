@@ -1,5 +1,9 @@
 # solitbackend
 Backend for SoLit Project 3 app! 
+
+See this GitHub Repo for the Front End: 
+https://github.com/KGlinoga/solit
+
 # soLit
 ## For booklovers everywhere!
 
