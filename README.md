@@ -5,6 +5,8 @@ Backend for SoLit Project 3 app!
 
 ## Description
 
+So Lit is a social book reviewing site that was born of a desire for a better way for biblophiles to engage with their books and community on a more nuanced level than a single 5-star rating.  Folks for whom books mean more than just a single 5-star rating.  What even is a 2-star book?? 
+
 ### 
 
 ## Usage
@@ -24,6 +26,8 @@ Backend for SoLit Project 3 app!
 
 ### GitHub was used to clone a new repository onto a computer. Visual Studio Code was used to create andMVC and to create files such as JS, SQL, and React files. GitBash Terminal was used to git add/commit/push edits made from the local repository into GitHub to update the repository.
 
+JSON Web Tokens and bcrypt to secure both passwords and accounts are used. 
+
 ## Installation
 
 ### Tools needed are GitHub to name and clone the repository into a local computer/repository. GitBash Terminal should be installed and one can clone repository with either an SSH key or the HTML URL and with the command-”git clone”-and copying in the URL or SSH key, upload to Terminal-making sure they are not within another folder but in the main branch-and using the commands git add . (press enter) then git commit -m "detailed description of your edits" (press enter) then git push (press enter) and enter their SSH key if prompted. 
@@ -36,12 +40,21 @@ Backend for SoLit Project 3 app!
 
 ## Screenshot
 
+Select Route Demos in Insomnia:
 
+Get all users
+<img width="1430" alt="Screen Shot 2022-09-07 at 7 28 24 PM" src="https://user-images.githubusercontent.com/28368622/189020176-defa4a30-ebdf-45e1-b81a-ef66875e7906.png">
+
+Logging in with hashed password and unique JSON Web Token
+<img width="1430" alt="Screen Shot 2022-09-07 at 7 28 48 PM" src="https://user-images.githubusercontent.com/28368622/189020223-cfa75bd4-c618-4cdc-b652-3588d20a0478.png">
+
+Writing a Daily Diary
+<img width="1430" alt="Screen Shot 2022-09-07 at 7 29 40 PM" src="https://user-images.githubusercontent.com/28368622/189020324-a39b8f30-6114-4f33-a29b-50c53ae7c561.png">
 
 
 ## Deployed Link
 
-
+https://solit-backend.herokuapp.com/
 
 ## Credits
 ### Tutoring, WW3 Schools, TA's, Stack Overflow, Slack AskBot, and the following:
