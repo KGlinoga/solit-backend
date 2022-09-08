@@ -52,7 +52,7 @@ Get all users
 Logging in with hashed password and unique JSON Web Token
 <img width="1430" alt="Screen Shot 2022-09-07 at 7 28 48 PM" src="https://user-images.githubusercontent.com/28368622/189020223-cfa75bd4-c618-4cdc-b652-3588d20a0478.png">
 
-Writing a Daily Diary
+Writing a Daily Diary.  
 <img width="1430" alt="Screen Shot 2022-09-07 at 7 29 40 PM" src="https://user-images.githubusercontent.com/28368622/189020324-a39b8f30-6114-4f33-a29b-50c53ae7c561.png">
 
 
